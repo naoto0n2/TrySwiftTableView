@@ -24,6 +24,7 @@ class ViewController: UIViewController {
 
     dynamic private func addNewTrack(sender: UIBarButtonItem) {
         if album.numberOfTracks < 5 {
+            self.album = self.album.addNewTrackAtIndex(0)
             self.insertTopRow()
         }
     }
@@ -69,13 +70,13 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        self.album.moveTrack(sourceIndexPath.row, toIndex: destinationIndexPath.row)
+        self.album = self.album.moveTrack(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         switch editingStyle {
         case .Delete:
-            self.album.deleteTrackAtIndex(indexPath.row)
+            self.album = self.album.deleteTrackAtIndex(indexPath.row)
             self.deleteRowAtIndexPath(indexPath)
         default: break
         }

@@ -19,21 +19,25 @@ struct Album {
         return self.tracks[index]
     }
     
-    mutating func addNewTrackAtIndex(index: Int) {
-        self.tracks.insert(Track(), atIndex: index)
+    func addNewTrackAtIndex(index: Int) -> Album {
+        var mutableTracks = self.tracks
+        mutableTracks.insert(Track(), atIndex: index)
+        return Album(tracks: mutableTracks)
     }
     
-    mutating func insertTrack(track: Track, atIndex index: Int) {
-        self.tracks.insert(track, atIndex: index)
+    func deleteTrackAtIndex(index: Int) -> Album {
+        var mutableTracks = self.tracks
+        mutableTracks.removeAtIndex(index)
+        return Album(tracks: mutableTracks)
     }
     
-    mutating func deleteTrackAtIndex(index: Int) {
-        self.tracks.removeAtIndex(index)
+    func moveTrack(fromIndex: Int, toIndex: Int) -> Album {
+        return self.deleteTrackAtIndex(fromIndex).insertTrack(self.tracks[fromIndex], atIndex: toIndex)
     }
     
-    mutating func moveTrack(fromIndex: Int, toIndex: Int) {
-        let trackToMove = self.tracks[fromIndex]
-        self.deleteTrackAtIndex(fromIndex)
-        self.insertTrack(trackToMove, atIndex: toIndex)
+    private func insertTrack(track: Track, atIndex index: Int) -> Album {
+        var mutableTracks = self.tracks
+        mutableTracks.insert(track, atIndex: index)
+        return Album(tracks: mutableTracks)
     }
 }
