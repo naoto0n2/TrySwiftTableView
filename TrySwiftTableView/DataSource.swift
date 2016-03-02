@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DataSource: NSObject, UITableViewDataSource {
+class DataSource: NSObject, UITableViewDataSource, SourceType {
     
     private var album = Album()
     
@@ -47,13 +47,5 @@ class DataSource: NSObject, UITableViewDataSource {
             self.deleteRowAtIndexPath(indexPath, from: tableView)
         default: break
         }
-    }
-    
-    func insertTopRowIn(tableView: UITableView) {
-        tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Fade)
-    }
-    
-    func deleteRowAtIndexPath(indexPath: NSIndexPath, from tableView: UITableView) {
-        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
     }
 }
