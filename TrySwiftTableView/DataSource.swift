@@ -12,11 +12,8 @@ class DataSource: NSObject, UITableViewDataSource, SourceType {
     
     var dataObject: DataType = Album()
     
-    func addItemTo(tableView: UITableView) {
-        if self.dataObject.numberOfItems < 5 {
-            self.dataObject = self.dataObject.addNewItemAtIndex(0)
-            self.insertTopRowIn(tableView)
-        }
+    var conditionForAdding: Bool {
+        return self.dataObject.numberOfItems < 5
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
