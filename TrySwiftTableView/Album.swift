@@ -8,36 +8,36 @@
 
 import Foundation
 
-struct Album {
+struct Album: DataType {
     private var tracks: [Track] = []
     
-    var numberOfTracks: Int {
+    var numberOfItems: Int {
         return self.tracks.count
     }
     
-    func trackAtPosition(index: Int) -> Track {
+    subscript(index: Int) -> Track {
         return self.tracks[index]
     }
     
-    func addNewTrackAtIndex(index: Int) -> Album {
-        var mutableTracks = self.tracks
-        mutableTracks.insert(Track(), atIndex: index)
-        return Album(tracks: mutableTracks)
+    func addNewItemAtIndex(index: Int) -> Album {
+        var mutableItems = self.tracks
+        mutableItems.insert(Track(), atIndex: index)
+        return Album(tracks: mutableItems)
     }
     
-    func deleteTrackAtIndex(index: Int) -> Album {
-        var mutableTracks = self.tracks
-        mutableTracks.removeAtIndex(index)
-        return Album(tracks: mutableTracks)
+    func deleteItemAtIndex(index: Int) -> Album {
+        var mutableItems = self.tracks
+        mutableItems.removeAtIndex(index)
+        return Album(tracks: mutableItems)
     }
     
-    func moveTrack(fromIndex: Int, toIndex: Int) -> Album {
-        return self.deleteTrackAtIndex(fromIndex).insertTrack(self.tracks[fromIndex], atIndex: toIndex)
+    func moveItem(fromIndex: Int, toIndex: Int) -> Album {
+        return self.deleteItemAtIndex(fromIndex).insertItem(self.tracks[fromIndex], atIndex: toIndex)
     }
     
-    private func insertTrack(track: Track, atIndex index: Int) -> Album {
-        var mutableTracks = self.tracks
-        mutableTracks.insert(track, atIndex: index)
-        return Album(tracks: mutableTracks)
+    private func insertItem(track: Track, atIndex index: Int) -> Album {
+        var mutableItems = self.tracks
+        mutableItems.insert(track, atIndex: index)
+        return Album(tracks: mutableItems)
     }
 }
