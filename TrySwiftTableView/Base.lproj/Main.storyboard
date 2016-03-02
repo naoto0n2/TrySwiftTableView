@@ -47,7 +47,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="OWv-9a-uf7"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ab0-Sy-pn4"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="OPI-Li-dXu"/>
                                 </connections>
                             </tableView>

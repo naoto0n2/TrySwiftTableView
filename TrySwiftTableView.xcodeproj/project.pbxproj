@@ -15,6 +15,7 @@
 		6D62312C1C87039D00130F86 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62312B1C87039D00130F86 /* Album.swift */; };
 		6D62312E1C87044D00130F86 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62312D1C87044D00130F86 /* Track.swift */; };
 		6D6231341C87073600130F86 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6231331C87073600130F86 /* TrackCell.swift */; };
+		6D6231381C871ADC00130F86 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6231371C871ADC00130F86 /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		6D62312B1C87039D00130F86 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		6D62312D1C87044D00130F86 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		6D6231331C87073600130F86 /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		6D6231371C871ADC00130F86 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				6D6231191C87024200130F86 /* AppDelegate.swift */,
 				6D62311B1C87024200130F86 /* ViewController.swift */,
+				6D6231371C871ADC00130F86 /* DataSource.swift */,
 				6D62312B1C87039D00130F86 /* Album.swift */,
 				6D62312D1C87044D00130F86 /* Track.swift */,
 				6D6231331C87073600130F86 /* TrackCell.swift */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D6231381C871ADC00130F86 /* DataSource.swift in Sources */,
 				6D6231341C87073600130F86 /* TrackCell.swift in Sources */,
 				6D62311C1C87024200130F86 /* ViewController.swift in Sources */,
 				6D62311A1C87024200130F86 /* AppDelegate.swift in Sources */,
