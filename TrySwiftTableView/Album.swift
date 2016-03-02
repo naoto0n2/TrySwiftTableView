@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Album {
+struct Album {
     private var tracks: [Track] = []
     
     var numberOfTracks: Int {
@@ -19,19 +19,19 @@ class Album {
         return self.tracks[index]
     }
     
-    func addNewTrackAtIndex(index: Int) {
+    mutating func addNewTrackAtIndex(index: Int) {
         self.tracks.insert(Track(), atIndex: index)
     }
     
-    func insertTrack(track: Track, atIndex index: Int) {
+    mutating func insertTrack(track: Track, atIndex index: Int) {
         self.tracks.insert(track, atIndex: index)
     }
     
-    func deleteTrackAtIndex(index: Int) {
+    mutating func deleteTrackAtIndex(index: Int) {
         self.tracks.removeAtIndex(index)
     }
     
-    func moveTrack(fromIndex: Int, toIndex: Int) {
+    mutating func moveTrack(fromIndex: Int, toIndex: Int) {
         let trackToMove = self.tracks[fromIndex]
         self.deleteTrackAtIndex(fromIndex)
         self.insertTrack(trackToMove, atIndex: toIndex)

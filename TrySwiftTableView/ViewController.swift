@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let album = Album()
+    private var album = Album()
     
     override func viewDidLoad() {
         super.viewDidLoad()
