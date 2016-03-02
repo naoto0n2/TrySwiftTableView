@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TrySwiftTableView
 //
-//  Created by 小梛 直人 on 3/2/16.
+//  Created by Naoto Onagi on 2016/03/02.
 //  Copyright © 2016 Naoto Onagi. All rights reserved.
 //
 
