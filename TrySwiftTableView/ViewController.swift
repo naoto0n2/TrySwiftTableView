@@ -60,8 +60,7 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         let track = self.album.trackAtPosition(indexPath.row)
-        cell.textLabel?.text = track.name
-        cell.detailTextLabel?.text = track.artist
+        cell.fillWith(track)
         return cell
     }
     

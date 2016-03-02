@@ -9,5 +9,8 @@
 import UIKit
 
 class TrackCell: UITableViewCell {
-
+    func fillWith(track: Track) {
+        self.textLabel?.text = track.name
+        self.detailTextLabel?.text = track.artist
+    }
 }
