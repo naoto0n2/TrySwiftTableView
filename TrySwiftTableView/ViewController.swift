@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var dataSource = DataSource()
+    private var dataSource = AlbumDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()

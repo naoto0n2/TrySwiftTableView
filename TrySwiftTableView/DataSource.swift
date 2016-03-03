@@ -10,10 +10,14 @@ import UIKit
 
 class DataSource: NSObject, UITableViewDataSource, SourceType {
     
-    var dataObject: DataType = Album()
-    
+    var dataObject: DataType
+
     var conditionForAdding: Bool {
-        return self.dataObject.numberOfItems < 5
+        return false
+    }
+
+    init<A: DataType>(dataObject: A) {
+        self.dataObject = dataObject
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,13 +25,7 @@ class DataSource: NSObject, UITableViewDataSource, SourceType {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        guard
-            let cell = tableView.dequeueReusableCellWithIdentifier("TrackCell", forIndexPath: indexPath) as? TrackCell,
-            let album = dataObject as? Album else {
-                return UITableViewCell()
-        }
-        cell.fillWith(album[indexPath.row])
-        return cell
+        fatalError("This method must be overridden")
     }
     
     func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
